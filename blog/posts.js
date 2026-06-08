@@ -36,7 +36,7 @@ var BLOG_POSTS = [
     category: "Guide",
     date: "2026-05-26",
     dateLabel: "26 May 2026",
-    image: null
+    image: "img/choosing-emergency-plumber-melbourne-questions.jpg"
   },
   {
     slug: "how-to-turn-off-water-mains-emergency",
