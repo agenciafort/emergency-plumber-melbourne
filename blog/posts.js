@@ -45,7 +45,7 @@ var BLOG_POSTS = [
     category: "Emergency",
     date: "2026-05-19",
     dateLabel: "19 May 2026",
-    image: null
+    image: "img/how-to-turn-off-water-mains-emergency.jpg"
   },
   {
     slug: "stormwater-roof-leaks-melbourne-homes",
