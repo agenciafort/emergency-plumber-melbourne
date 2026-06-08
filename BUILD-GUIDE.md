@@ -16,9 +16,10 @@
 5. Construa na ordem da **Seção 11 (Fases)**.
 6. Os textos da interface são em **inglês (en-AU)**. As instruções deste guia são em PT-BR.
 7. **FLUXO DE 2 PASSOS (OBRIGATÓRIO).** Cada página ou post é entregue em dois
-   passos separados (ver Seção 14). NUNCA gere imagens junto com o HTML: primeiro
-   construa a página, depois PARE e peça ao usuário para trocar de IA e gerar as
-   imagens. Só prossiga para a próxima página após confirmação do usuário.
+   passos (ver Seção 14): (1) construir o HTML; (2) gerar as imagens, convertê-las
+   para WebP/JPG com FFmpeg e instalá-las em `assets/img/` (ou `blog/img/`) para a
+   página renderizar perfeitamente. Nunca deixe PNG na página nem `<img>` apontando
+   para arquivo inexistente. Só então faça commit/push e siga para a próxima página.
 
 ---
 
@@ -35,7 +36,9 @@ Posicionar o site em **1º lugar no Google (on-page)** para o cluster
 
 - **Stack:** HTML5 estático + CSS (um arquivo, `assets/css/styles.css`) + JS vanilla (`assets/js/main.js`, `blog/posts.js`). Sem build step.
 - **Deploy:** qualquer host estático (Railway, Render, Netlify, Cloudflare Pages).
-- **Sem dependências de runtime.** Ícones via Tabler Icons (CDN, já incluído). Fontes via Google Fonts com `preconnect` + `display=swap`.
+- **Sem dependências de runtime.** Ícones via Tabler Icons (webfont CDN, já incluído). Fontes via Google Fonts com `preconnect` + `display=swap`.
+- **URL EXATA do Tabler (não inventar versão/caminho):** `https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.35.0/tabler-icons.min.css`. Caminhos antigos como `.../3.7.0/iconfont/...` retornam 404 e quebram TODOS os ícones. Use sempre o mesmo `<link>` que está na `index.html`.
+- **Ícones removidos:** confira se o ícone existe nesta versão antes de usar. Ex.: `ti-pipe` foi removido — use `ti-droplet-cog` para "blocked drains". Se um ícone aparecer como quadrado vazio, o nome não existe na versão atual.
 - **Acessibilidade:** HTML semântico, `alt` em toda imagem, contraste AA, navegação por teclado, um único `<h1>` por página.
 - **Idioma:** `<html lang="en-AU">`.
 - **Performance budget por página:** LCP < 2.5s, CLS < 0.1, INP < 200ms, peso inicial < 500KB.
@@ -400,29 +403,31 @@ Nunca junte os dois. Nunca pule o Passo 2.
 - Salvar/commitar a página normalmente. (A imagem aparecerá quebrada até o Passo 2 —
   isso é esperado.)
 
-### Passo 2 — PARAR e pedir as imagens ao usuário
-Depois de construir a página, a IA DEVE parar e responder EXATAMENTE neste formato:
+### Passo 2 — Gerar, converter e instalar as imagens (tarefa do agente)
+Depois de construir a página, o agente gera as imagens e as deixa funcionando —
+o usuário NÃO precisa gerar nem mover nada. Fluxo obrigatório:
 
-> ✋ **PÁGINA PRONTA — HORA DE GERAR AS IMAGENS**
-> Troque para uma IA geradora de imagens (Midjourney / Flux / GPT-image / Gemini)
-> e gere os arquivos abaixo. Depois, coloque cada um no caminho indicado.
->
-> **Imagens necessárias para esta página:**
-> 1. `assets/img/<pagina>-hero.webp` — 1600×~1760px (proporção da hero)
->    Prompt: "<prompt fotográfico completo, estilo da Seção 7>"
-> 2. `assets/img/<pagina>-og.jpg` — 1200×630px
->    Prompt: "<prompt do OG>"
-> 3. (se houver) capa/infográfico raster — <dimensões> — Prompt: "<...>"
->
-> Quando as imagens estiverem nas pastas, me diga **"próxima"** que eu construo a
-> página seguinte.
+1. **Gerar** cada imagem necessária (hero, og, capa de post) com a ferramenta de
+   geração de imagem, seguindo os prompts no estilo fixo da Seção 7
+   (fotorrealista, contexto australiano, acentos charcoal + hi-vis amber, sem texto).
+2. **Converter para o formato web e instalar na pasta certa** usando FFmpeg
+   (confirmado disponível na máquina). A geração produz PNG; nunca deixe PNG na
+   página. Converta e grave em `assets/img/` (ou `blog/img/`):
+   - Hero → `.webp` (~1280–1600px de largura, qualidade ~82):
+     `ffmpeg -y -i <src>.png -vf "scale=1280:-1" -quality 82 assets/img/<pagina>-hero.webp`
+   - OG → `.jpg` 1200×630 (melhor compatibilidade social que webp):
+     `ffmpeg -y -i <src>.png -vf "scale=1200:630:force_original_aspect_ratio=increase,crop=1200:630" -q:v 3 assets/img/<pagina>-og.jpg`
+   - Capa de post → `.jpg` 16:10 em `blog/img/<slug>.jpg`.
+3. **Conferir** que os arquivos existem no caminho exato que o HTML referencia.
+4. **Commitar e dar push** da página + imagens juntas. A página já deve renderizar
+   a hero corretamente neste ponto.
 
-- A IA NÃO avança para a próxima página/post enquanto o usuário não confirmar.
-- Os prompts de imagem seguem SEMPRE o estilo visual fixo da Seção 7
-  (fotorrealista, contexto australiano, acentos charcoal + hi-vis amber, sem texto).
-- Regras de CWV da Seção 5.6 continuam valendo: hero com `fetchpriority="high"`,
-  resto `loading="lazy"`, WebP/AVIF, `srcset` quando possível.
+- Padrão de formatos: hero/capa em **WebP**, og:image em **JPG**.
+- Regras de CWV da Seção 5.6 valem: hero com `fetchpriority="high"`,
+  resto `loading="lazy"`.
+- Só então o agente avança para a próxima página/post, na ordem da Seção 11
+  (idealmente confirmando com o usuário a cada página).
 
 ### Resumo do ciclo
-Construir página → PARAR → pedir imagens (formato acima) → usuário gera e confirma
-→ próxima página. Repetir na ordem da Seção 11.
+Construir página → gerar imagens → converter (WebP/JPG) e instalar em `assets/img/`
+→ conferir render → commit/push → próxima página. Repetir na ordem da Seção 11.
