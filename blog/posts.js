@@ -21,13 +21,7 @@
 
 var BLOG_POSTS = [
   {
-    slug: "burst-pipe-water-damage-insurance-melbourne",
-    title: "Burst pipe water damage: what your insurance needs to know",
-    excerpt: "Documenting the damage the right way can make or break your claim. Here's the checklist.",
-    category: "Guide",
-    date: "2026-06-02",
-    dateLabel: "2 Jun 2026",
-    image: null
+    image: "img/burst-pipe-water-damage-insurance-melbourne.jpg"
   },
   {
     slug: "choosing-emergency-plumber-melbourne-questions",
@@ -48,6 +42,12 @@ var BLOG_POSTS = [
     image: "img/how-to-turn-off-water-mains-emergency.jpg"
   },
   {
+    slug: "stormwater-roof-leaks-melbourne-homes",
+    title: "Stormwater & roof leaks: protecting your Melbourne home",
+    excerpt: "Melbourne's sudden downpours expose weak points fast. Here's what to check before storm season.",
+    category: "Roof",
+    date: "2026-05-12",
+    dateLabel: "12 May 2026",
     image: "img/stormwater-roof-leaks-melbourne-homes.jpg"
   },
   {
