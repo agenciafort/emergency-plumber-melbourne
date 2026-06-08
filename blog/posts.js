@@ -111,6 +111,15 @@ var BLOG_POSTS = [
     image: "img/signs-hot-water-system-failing.jpg"
   },
   {
+    slug: "hot-water-system-types-melbourne",
+    title: "Gas vs electric vs heat pump hot water: which is best in Melbourne?",
+    excerpt: "Compare gas, electric storage and heat pump systems — VIC running costs, rebates and the best choice for your household.",
+    category: "Hot water",
+    date: "2026-04-04",
+    dateLabel: "4 Apr 2026",
+    image: "img/hot-water-system-types-melbourne.jpg"
+  },
+  {
     slug: "what-to-do-when-a-pipe-bursts",
     title: "What to do when a pipe bursts (before the plumber arrives)",
     excerpt: "Five quick steps to limit the water damage while help is on the way.",
