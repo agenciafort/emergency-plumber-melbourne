@@ -90,7 +90,7 @@ var BLOG_POSTS = [
     category: "Drains",
     date: "2026-04-14",
     dateLabel: "14 Apr 2026",
-    image: null
+    image: "img/how-to-clear-a-blocked-drain-melbourne.jpg"
   },
   {
     slug: "signs-hot-water-system-failing",
