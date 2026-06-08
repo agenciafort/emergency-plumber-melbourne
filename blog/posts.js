@@ -108,7 +108,7 @@ var BLOG_POSTS = [
     category: "Emergency",
     date: "2026-03-31",
     dateLabel: "31 Mar 2026",
-    image: null
+    image: "img/what-to-do-when-a-pipe-bursts.jpg"
   },
   {
     slug: "how-much-does-emergency-plumber-cost-melbourne",
