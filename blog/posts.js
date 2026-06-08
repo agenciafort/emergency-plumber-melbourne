@@ -117,7 +117,7 @@ var BLOG_POSTS = [
     category: "Pricing",
     date: "2026-03-24",
     dateLabel: "24 Mar 2026",
-    image: null
+    image: "img/how-much-does-emergency-plumber-cost-melbourne.jpg"
   }
 ];
 
