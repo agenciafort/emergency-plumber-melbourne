@@ -81,10 +81,7 @@ var BLOG_POSTS = [
     category: "Gas",
     date: "2026-04-21",
     dateLabel: "21 Apr 2026",
-    image: null
-  },
-  {
-    slug: "how-to-clear-a-blocked-drain-melbourne",
+    image: "img/gas-leak-warning-signs-melbourne.jpg"
     title: "How to clear a blocked drain (and when to call a pro)",
     excerpt: "Safe DIY steps that won't damage your pipes — and the warning signs of a bigger blockage.",
     category: "Drains",
