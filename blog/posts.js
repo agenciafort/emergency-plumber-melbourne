@@ -48,13 +48,7 @@ var BLOG_POSTS = [
     image: "img/how-to-turn-off-water-mains-emergency.jpg"
   },
   {
-    slug: "stormwater-roof-leaks-melbourne-homes",
-    title: "Stormwater & roof leaks: protecting your Melbourne home",
-    excerpt: "Melbourne's sudden downpours expose weak points fast. Here's what to check before storm season.",
-    category: "Roof",
-    date: "2026-05-12",
-    dateLabel: "12 May 2026",
-    image: null
+    image: "img/stormwater-roof-leaks-melbourne-homes.jpg"
   },
   {
     slug: "why-is-my-toilet-overflowing-causes-fixes",
@@ -82,6 +76,9 @@ var BLOG_POSTS = [
     date: "2026-04-21",
     dateLabel: "21 Apr 2026",
     image: "img/gas-leak-warning-signs-melbourne.jpg"
+  },
+  {
+    slug: "how-to-clear-a-blocked-drain-melbourne",
     title: "How to clear a blocked drain (and when to call a pro)",
     excerpt: "Safe DIY steps that won't damage your pipes — and the warning signs of a bigger blockage.",
     category: "Drains",
