@@ -15,6 +15,10 @@
 4. Toda página precisa passar no **Checklist de QA da Seção 12** antes de ser considerada pronta.
 5. Construa na ordem da **Seção 11 (Fases)**.
 6. Os textos da interface são em **inglês (en-AU)**. As instruções deste guia são em PT-BR.
+7. **FLUXO DE 2 PASSOS (OBRIGATÓRIO).** Cada página ou post é entregue em dois
+   passos separados (ver Seção 14). NUNCA gere imagens junto com o HTML: primeiro
+   construa a página, depois PARE e peça ao usuário para trocar de IA e gerar as
+   imagens. Só prossiga para a próxima página após confirmação do usuário.
 
 ---
 
@@ -374,3 +378,51 @@ Cada **pilar** é uma página money (serviço/bairro). Os **clusters** são post
 - Servir como site estático. Garantir que `/blog/?page=2` resolva (é a mesma `index.html` com query string — funciona em qualquer host estático; não precisa de rewrite).
 - Configurar HTTPS e o domínio; conferir que `canonical`/`og:url`/`sitemap`/`robots` apontam para o domínio final (Find & Replace de `your-domain.com.au`).
 - Enviar `sitemap.xml` ao Google Search Console; criar/verificar o Google Business Profile.
+
+---
+
+## 14. FLUXO DE 2 PASSOS POR PÁGINA / POST (OBRIGATÓRIO)
+
+Toda página money e todo post de blog é entregue em DOIS passos distintos.
+Nunca junte os dois. Nunca pule o Passo 2.
+
+### Passo 1 — Construir a página (texto/HTML)
+- Gere o arquivo HTML completo (head + body + schema + conteúdo), seguindo os
+  7 pilares da Seção 5 e o checklist da Seção 12.
+- Em todo lugar que precisa de imagem, insira a tag `<img>`/SVG normalmente,
+  apontando para o caminho final esperado, usando o padrão de nomes da Seção 5.7:
+  - Hero:       `assets/img/<pagina>-hero.webp`
+  - OG:         `assets/img/<pagina>-og.jpg`
+  - Capa post:  `blog/img/<slug>.jpg`
+  - Infográfico SVG inline: NÃO precisa de arquivo (vai escrito no HTML).
+- Toda `<img>` leva `width`, `height` e `alt` descritivo (evita CLS) desde já,
+  mesmo que o arquivo ainda não exista.
+- Salvar/commitar a página normalmente. (A imagem aparecerá quebrada até o Passo 2 —
+  isso é esperado.)
+
+### Passo 2 — PARAR e pedir as imagens ao usuário
+Depois de construir a página, a IA DEVE parar e responder EXATAMENTE neste formato:
+
+> ✋ **PÁGINA PRONTA — HORA DE GERAR AS IMAGENS**
+> Troque para uma IA geradora de imagens (Midjourney / Flux / GPT-image / Gemini)
+> e gere os arquivos abaixo. Depois, coloque cada um no caminho indicado.
+>
+> **Imagens necessárias para esta página:**
+> 1. `assets/img/<pagina>-hero.webp` — 1600×~1760px (proporção da hero)
+>    Prompt: "<prompt fotográfico completo, estilo da Seção 7>"
+> 2. `assets/img/<pagina>-og.jpg` — 1200×630px
+>    Prompt: "<prompt do OG>"
+> 3. (se houver) capa/infográfico raster — <dimensões> — Prompt: "<...>"
+>
+> Quando as imagens estiverem nas pastas, me diga **"próxima"** que eu construo a
+> página seguinte.
+
+- A IA NÃO avança para a próxima página/post enquanto o usuário não confirmar.
+- Os prompts de imagem seguem SEMPRE o estilo visual fixo da Seção 7
+  (fotorrealista, contexto australiano, acentos charcoal + hi-vis amber, sem texto).
+- Regras de CWV da Seção 5.6 continuam valendo: hero com `fetchpriority="high"`,
+  resto `loading="lazy"`, WebP/AVIF, `srcset` quando possível.
+
+### Resumo do ciclo
+Construir página → PARAR → pedir imagens (formato acima) → usuário gera e confirma
+→ próxima página. Repetir na ordem da Seção 11.
