@@ -72,7 +72,7 @@ var BLOG_POSTS = [
     category: "Emergency",
     date: "2026-04-28",
     dateLabel: "28 Apr 2026",
-    image: null
+    image: "img/what-counts-as-a-real-plumbing-emergency.jpg"
   },
   {
     slug: "gas-leak-warning-signs-melbourne",
