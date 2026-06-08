@@ -93,6 +93,15 @@ var BLOG_POSTS = [
     image: "img/how-to-clear-a-blocked-drain-melbourne.jpg"
   },
   {
+    slug: "tree-roots-in-pipes-melbourne",
+    title: "Tree roots in your pipes: signs, risks & solutions",
+    excerpt: "Recurring blocked drains in Melbourne's garden suburbs? Tree roots in clay sewers — signs, CCTV, jet removal and relining.",
+    category: "Drains",
+    date: "2026-04-11",
+    dateLabel: "11 Apr 2026",
+    image: "img/tree-roots-in-pipes-melbourne.jpg"
+  },
+  {
     slug: "signs-hot-water-system-failing",
     title: "Signs your hot water system is about to fail",
     excerpt: "Rusty water, banging noises, lukewarm showers — catch it before it leaves you cold.",
