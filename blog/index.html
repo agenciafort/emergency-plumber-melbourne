@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plumbing Tips & Guides | Blog — [NOME_EMPRESA]</title>
+  <meta name="description" content="Practical plumbing advice for Melbourne homes and businesses — emergency tips, hot water, blocked drains, gas safety and more from your local 24/7 plumbers." />
+  <link rel="canonical" href="https://your-domain.com.au/blog/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Plumbing Tips & Guides | [NOME_EMPRESA]" />
+  <meta property="og:description" content="Practical plumbing advice for Melbourne homes and businesses." />
+  <meta property="og:url" content="https://your-domain.com.au/blog/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.7.0/iconfont/tabler-icons.min.css" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="topbar__left">
+        <span class="topbar__badge"><span class="pulse"></span> 24/7 EMERGENCY</span>
+        <span class="area"><i class="ti ti-map-pin"></i> Melbourne &amp; suburbs</span>
+      </div>
+      <a class="phone" href="tel:+61300000000"><i class="ti ti-phone-call"></i> [TELEFONE]</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../" aria-label="[NOME_EMPRESA] home">
+        <span class="brand__mark"><i class="ti ti-droplet"></i></span> [NOME_EMPRESA]
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../services/">Services</a>
+        <a href="../locations/">Areas</a>
+        <a href="./">Blog</a>
+        <a href="../#why">Why us</a>
+        <a href="../#faq">FAQ</a>
+        <a class="btn btn--call" href="tel:+61300000000"><i class="ti ti-phone"></i> Call now</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </header>
+
+  <!-- PAGE HEAD -->
+  <section class="section" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Advice &amp; guides</span>
+        <h1 style="font-size:clamp(2.2rem,1.6rem+2.5vw,3.4rem)">The plumbing blog</h1>
+        <p class="lead">Practical advice for Melbourne homes &amp; businesses — from emergencies to upkeep.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG GRID + PAGINATION -->
+  <section class="section" style="padding-top:2rem">
+    <div class="wrap">
+      <div class="blog-grid" id="blog-grid"><!-- cards injected by JS --></div>
+      <nav class="pagination" id="pagination" aria-label="Blog pages"></nav>
+      <div id="empty-state" style="display:none; text-align:center; padding:3rem 0; color:var(--muted)">
+        <i class="ti ti-notebook" style="font-size:2.5rem; color:var(--muted-2)"></i>
+        <p>No posts yet — check back soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Plumbing problem that can't wait?</h2>
+        <p>A licensed Melbourne plumber is ready 24/7.</p>
+      </div>
+      <a class="btn btn--dark btn--lg" href="tel:+61300000000"><i class="ti ti-phone-call"></i> Call [TELEFONE]</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="brand"><span class="brand__mark"><i class="ti ti-droplet"></i></span> [NOME_EMPRESA]</div>
+          <p class="footer-note">24/7 emergency plumbing across Melbourne &amp; suburbs.<br>Licensed &amp; insured · VBA Lic. [LICENCA]<br>ABN [ABN]</p>
+        </div>
+        <div><h4>Services</h4><ul>
+          <li><a href="../services/">Blocked drains</a></li>
+          <li><a href="../services/">Burst pipes</a></li>
+          <li><a href="../services/">Hot water</a></li>
+          <li><a href="../services/">Gas fitting</a></li>
+        </ul></div>
+        <div><h4>Areas</h4><ul>
+          <li><a href="../locations/south-melbourne.html">South Melbourne</a></li>
+          <li><a href="../locations/port-melbourne.html">Port Melbourne</a></li>
+          <li><a href="../locations/melbourne-cbd.html">Melbourne CBD</a></li>
+          <li><a href="../locations/">All areas</a></li>
+        </ul></div>
+        <div><h4>Company</h4><ul>
+          <li><a href="./">Blog</a></li>
+          <li><a href="../#why">Why choose us</a></li>
+          <li><a href="../#faq">FAQ</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> [NOME_EMPRESA]. All rights reserved.</span>
+        <span>Emergency Plumber Melbourne · 24/7</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-call">
+    <a class="btn btn--call btn--lg" href="tel:+61300000000"><i class="ti ti-phone-call"></i> Call now — 24/7</a>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="posts.js"></script>
+  <script>
+  /* ============================================================
+     BLOG PAGINATION — 9 cards/page, 3 columns, newest first.
+     New "page" appears automatically once posts exceed a multiple
+     of 9 (post 10 -> page 2, post 19 -> page 3, ...).
+     ============================================================ */
+  (function () {
+    var PER_PAGE = 9;
+    var grid = document.getElementById('blog-grid');
+    var pager = document.getElementById('pagination');
+    var empty = document.getElementById('empty-state');
+
+    var posts = (typeof BLOG_POSTS !== 'undefined' ? BLOG_POSTS : [])
+      .slice()
+      .sort(function (a, b) { return new Date(b.date) - new Date(a.date); }); // newest first
+
+    if (!posts.length) { empty.style.display = 'block'; return; }
+
+    var totalPages = Math.ceil(posts.length / PER_PAGE);
+    var params = new URLSearchParams(window.location.search);
+    var page = parseInt(params.get('page'), 10) || 1;
+    if (page < 1) page = 1;
+    if (page > totalPages) page = totalPages;
+
+    var start = (page - 1) * PER_PAGE;
+    var slice = posts.slice(start, start + PER_PAGE);
+
+    grid.innerHTML = slice.map(function (p) {
+      var img = p.image
+        ? '<img src="' + p.image + '" alt="' + p.title + '" loading="lazy" width="640" height="400">'
+        : '<div class="ph"><i class="ti ti-photo"></i></div>';
+      return '<a class="post-card" href="posts/' + p.slug + '.html">' +
+        '<div class="post-card__img">' + img +
+        '<span class="post-card__cat">' + p.category + '</span></div>' +
+        '<div class="post-card__body">' +
+        '<div class="post-card__meta"><i class="ti ti-calendar"></i> ' + p.dateLabel + '</div>' +
+        '<h3>' + p.title + '</h3>' +
+        '<p>' + p.excerpt + '</p>' +
+        '<span class="more">Read more <i class="ti ti-arrow-right"></i></span>' +
+        '</div></a>';
+    }).join('');
+
+    /* ---- pagination controls ---- */
+    if (totalPages <= 1) { pager.style.display = 'none'; return; }
+    var html = '';
+    var prevDisabled = page === 1 ? ' disabled' : '';
+    html += '<a class="prev' + prevDisabled + '" href="?page=' + (page - 1) + '" aria-label="Previous page"><i class="ti ti-chevron-left"></i></a>';
+    for (var i = 1; i <= totalPages; i++) {
+      if (i === page) html += '<span class="current" aria-current="page">' + i + '</span>';
+      else html += '<a href="?page=' + i + '">' + i + '</a>';
+    }
+    var nextDisabled = page === totalPages ? ' disabled' : '';
+    html += '<a class="next' + nextDisabled + '" href="?page=' + (page + 1) + '" aria-label="Next page"><i class="ti ti-chevron-right"></i></a>';
+    pager.innerHTML = html;
+  })();
+  </script>
+</body>
+</html>
