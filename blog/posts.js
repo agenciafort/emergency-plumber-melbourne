@@ -63,7 +63,7 @@ var BLOG_POSTS = [
     category: "Toilets",
     date: "2026-05-05",
     dateLabel: "5 May 2026",
-    image: null
+    image: "img/why-is-my-toilet-overflowing-causes-fixes.jpg"
   },
   {
     slug: "what-counts-as-a-real-plumbing-emergency",
