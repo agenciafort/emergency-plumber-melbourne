@@ -108,7 +108,7 @@ var BLOG_POSTS = [
     category: "Hot water",
     date: "2026-04-07",
     dateLabel: "7 Apr 2026",
-    image: null
+    image: "img/signs-hot-water-system-failing.jpg"
   },
   {
     slug: "what-to-do-when-a-pipe-bursts",
